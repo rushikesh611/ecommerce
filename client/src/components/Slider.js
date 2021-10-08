@@ -1,4 +1,3 @@
-// 45:04
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@material-ui/icons";
 import styled from "styled-components";
 import { useState } from "react";
