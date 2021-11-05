@@ -11,8 +11,9 @@ import StripeCheckout from "react-stripe-checkout";
 import { userRequest } from "../requestMethods";
 import { useHistory } from "react-router";
 
-const KEY = process.env.REACT_APP_STRIPE;
-
+// const KEY = process.env.STRIPE_PUBLISHABLE_KEY;
+const STRIPE_PUBLISHABLE_KEY =
+  "pk_test_51JmCnjSIg6OGD6ncySLsOSBShqdQwzQPAlwYIYcyDOXErARS6aPvSdpJGo2wB5LaLivlQOGbg9lwxgssmmI9th4s00AOlu9WBH";
 const Container = styled.div``;
 
 const Wrapper = styled.div`
@@ -257,8 +258,8 @@ const Cart = () => {
               shippingAddress
               description={`Your total is $${cart.total}`}
               amount={cart.total * 100}
+              stripeKey={STRIPE_PUBLISHABLE_KEY}
               token={onToken}
-              stripeKey={KEY}
             >
               <Button>CHECKOUT NOW</Button>
             </StripeCheckout>
